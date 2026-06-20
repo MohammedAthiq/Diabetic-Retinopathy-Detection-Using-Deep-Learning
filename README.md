@@ -17,6 +17,13 @@ This project was built for a college engineering presentation, combining image p
 
 ---
 
+## 🚀 Live Deployment
+The application is deployed online and active 24/7 on Hugging Face Spaces. You can try the system live here:
+
+👉 **[Live Demo: Diabetic Retinopathy Detection System](https://huggingface.co/spaces/mohammedathiqsyed/diabetic-retinopathy-detection)**
+
+---
+
 ## 🛠️ How It Works
 
 1. **Retinal Preprocessing (Green Channel + CLAHE):**
