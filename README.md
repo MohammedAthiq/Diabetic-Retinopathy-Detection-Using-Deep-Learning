@@ -1,15 +1,4 @@
----
-title: Diabetic Retinopathy Detection System
-emoji: 👁️
-colorFrom: blue
-colorTo: indigo
-sdk: gradio
-sdk_version: 6.19.0
-app_file: app.py
-pinned: false
----
-
-# 👁️ Diabetic Retinopathy Detection System
+# Diabetic Retinopathy Detection System using Deep Learning
 
 An AI-powered diagnostic screening tool designed to detect the severity stages of **Diabetic Retinopathy (DR)** from retinal fundus photographs. 
 
