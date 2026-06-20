@@ -1,0 +1,7 @@
+# Ignore PyTorch model weights (store on Hugging Face/Drive instead)
+*.pth
+*.pt
+
+# System files
+.DS_Store
+.ipynb_checkpoints/
