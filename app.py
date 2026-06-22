@@ -103,26 +103,41 @@ def predict(image):
 
 # Custom CSS for high-quality dark mode and glassmorphism styling
 custom_css = """
-body {
+html, body {
     background-color: #0b0f19 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+}
+body {
     font-family: 'Inter', sans-serif !important;
 }
 .gradio-container {
-    max-width: 1100px !important;
+    max-width: 100% !important;
+    width: 100% !important;
     margin: 0 auto !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
 }
 .header-container {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 1.5rem 1rem !important;
     backdrop-filter: blur(10px);
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    width: 100% !important;
 }
 .header-container h1 {
     font-family: 'Outfit', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -131,14 +146,18 @@ body {
 }
 .header-container p {
     color: #94a3b8;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 .card-box {
     background-color: rgba(30, 41, 59, 0.4) !important;
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
     border-radius: 16px !important;
     backdrop-filter: blur(15px) !important;
-    padding: 1.5rem !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 1rem !important;
 }
 .submit-btn {
     background: linear-gradient(90deg, #3b82f6, #2563eb) !important;
@@ -161,21 +180,56 @@ body {
     font-weight: 600 !important;
     cursor: pointer;
 }
+
+/* Hide all columns except the first (image input) column in the examples dataset to remove empty output boxes */
+.gr-samples th:not(:first-child),
+.gr-samples td:not(:first-child),
+.gr-dataset th:not(:first-child),
+.gr-dataset td:not(:first-child),
+[class*="dataset"] th:not(:first-child),
+[class*="dataset"] td:not(:first-child) {
+    display: none !important;
+}
+
+/* Prevent tabs from stretching the mobile screen by enabling horizontal scrolling */
+.gradio-container [role="tablist"], 
+.gradio-container .tab-nav,
+.gradio-container .tabs,
+.gradio-container div.flex.border-b {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    max-width: 100% !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+.gradio-container [role="tablist"] button,
+.gradio-container .tab-nav button,
+.gradio-container .tabs button,
+.gradio-container div.flex.border-b button {
+    flex-shrink: 0 !important;
+}
+
+/* Global box-sizing to prevent elements from stretching the viewport */
+* {
+    box-sizing: border-box !important;
+}
+
 @media (max-width: 768px) {
     .header-container {
-        padding: 1.5rem 1rem !important;
-        margin-bottom: 1.2rem !important;
+        padding: 1.2rem 0.8rem !important;
+        margin-bottom: 1rem !important;
         border-radius: 12px !important;
     }
     .header-container h1 {
-        font-size: 1.8rem !important;
+        font-size: 1.5rem !important;
     }
     .header-container p {
-        font-size: 0.95rem !important;
+        font-size: 0.85rem !important;
+        line-height: 1.3 !important;
     }
     .card-box {
-        padding: 1rem !important;
-        margin-bottom: 1rem !important;
+        padding: 0.8rem !important;
+        margin-bottom: 0.8rem !important;
         border-radius: 12px !important;
     }
     /* Ensure action buttons are full width and wrap correctly on mobile */
