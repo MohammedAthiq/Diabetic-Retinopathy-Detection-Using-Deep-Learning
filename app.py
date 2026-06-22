@@ -161,6 +161,28 @@ body {
     font-weight: 600 !important;
     cursor: pointer;
 }
+@media (max-width: 768px) {
+    .header-container {
+        padding: 1.5rem 1rem !important;
+        margin-bottom: 1.2rem !important;
+        border-radius: 12px !important;
+    }
+    .header-container h1 {
+        font-size: 1.8rem !important;
+    }
+    .header-container p {
+        font-size: 0.95rem !important;
+    }
+    .card-box {
+        padding: 1rem !important;
+        margin-bottom: 1rem !important;
+        border-radius: 12px !important;
+    }
+    /* Ensure action buttons are full width and wrap correctly on mobile */
+    .gradio-container button, .gradio-container a.btn {
+        width: 100% !important;
+    }
+}
 """
 
 with gr.Blocks(css=custom_css, theme=gr.themes.Soft()) as demo:
